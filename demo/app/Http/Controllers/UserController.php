@@ -8,11 +8,13 @@ class UserController extends Controller
 {
     public function index()
     {
-        return User::all();
+        $users = User::all();
+        return view('users', compact('users'));
     }
 
     public function show($id)
     {
-        return User::findOrFail($id);
+        $user = User::findOrFail($id);
+        return view('users', compact('user'));
     }
 }

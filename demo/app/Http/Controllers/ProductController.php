@@ -8,11 +8,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Product::all();
+        $products = Product::all();
+        return view('products', compact('products'));
     }
 
     public function show($id)
     {
-        return Product::findOrFail($id);
+        $product = Product::findOrFail($id);
+        return view('products', compact('product'));
     }
 }

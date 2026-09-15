@@ -8,11 +8,13 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return Order::all();
+        $orders = Order::all();
+        return view('orders', compact('orders'));
     }
 
     public function show($id)
     {
-        return Order::findOrFail($id);
+        $order = Order::findOrFail($id);
+        return view('orders', compact('order'));
     }
 }

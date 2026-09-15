@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
-use App\Models\Order;
+use Illuminate\Database\Eloquent\Model;
 
-class OrderController extends Controller
+class Order extends Model
 {
-    public function index()
-    {
-        return Order::all();
-    }
+    protected $guarded = [];
 }
